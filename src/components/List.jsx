@@ -16,7 +16,7 @@ export const List = ({ toggleActiveTab, songs, search }) => {
                   song.artist.toLowerCase().includes(search);
           })
           .map((song, index) => (
-            <div className="max-h-[280px]">
+            <div className="max-h-[280px]" key={index}>
               <Song
                 key={song.id}
                 index={index}
@@ -38,7 +38,7 @@ export const List = ({ toggleActiveTab, songs, search }) => {
                   song.artist.toLowerCase().includes(search);
           })
           .map((song, index) => (
-            <div className="max-h-[280px]">
+            <div className="max-h-[280px]" key={index}>
               <Song
                 key={song.id}
                 index={index}
