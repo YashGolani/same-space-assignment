@@ -6,7 +6,7 @@ import {
 } from "../redux/features/playerSlice";
 import { useState } from "react";
 
-export const Song = ({ index, song, songs, bgColor, activeSong }) => {
+export const Song = ({ index, song, activeSong, onSongClick }) => {
   const coverBaseUrl = "https://cms.samespace.com/assets/";
 
   const [songDuration, setSongDuration] = useState();
@@ -14,9 +14,10 @@ export const Song = ({ index, song, songs, bgColor, activeSong }) => {
   const dispatch = useDispatch();
 
   const handlePlayClick = () => {
-    dispatch(setActiveSong({ song, songs, index, bgColor }));
+    dispatch(setActiveSong({ song, index, songs: [] }));
     dispatch(setBgColor(song.accent));
     dispatch(playPause(true));
+    onSongClick();
   };
 
   const formattedDuration = `${Math.floor(songDuration / 60)}:${`0${Math.floor(

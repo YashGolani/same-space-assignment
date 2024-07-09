@@ -19,33 +19,25 @@ const playerSlice = createSlice({
       state.currentIndex = action.payload.index;
       state.isActive = true;
     },
-
     setBgColor: (state, action) => {
       state.bgColor = action.payload;
     },
-
-    nextSong: (state, action) => {
-      if (state.currentSongs[action.payload]?.track) {
-        state.activeSong = state.currentSongs[action.payload]?.track;
-      } else {
-        state.activeSong = state.currentSongs[action.payload];
+    nextSong: (state) => {
+      const nextIndex = state.currentIndex + 1;
+      if (nextIndex < state.currentSongs.length) {
+        state.activeSong = state.currentSongs[nextIndex];
+        state.currentIndex = nextIndex;
+        state.isActive = true;
       }
-
-      state.currentIndex = action.payload;
-      state.isActive = true;
     },
-
-    prevSong: (state, action) => {
-      if (state.currentSongs[action.payload]?.track) {
-        state.activeSong = state.currentSongs[action.payload]?.track;
-      } else {
-        state.activeSong = state.currentSongs[action.payload];
+    prevSong: (state) => {
+      const prevIndex = state.currentIndex - 1;
+      if (prevIndex >= 0) {
+        state.activeSong = state.currentSongs[prevIndex];
+        state.currentIndex = prevIndex;
+        state.isActive = true;
       }
-
-      state.currentIndex = action.payload;
-      state.isActive = true;
     },
-
     playPause: (state, action) => {
       state.isPlaying = action.payload;
     },
