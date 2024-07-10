@@ -76,7 +76,7 @@ export const Player = ({
   )}:${`0${Math.floor(currentSongDuration % 60)}`.slice(-2)}`;
 
   return (
-    <div className="max-w-[320px] max-h-[280px] ml-24">
+    <div className="xl:max-w-[320px] xl:max-h-[280px] xl:ml-24">
       <audio
         src={activeSong?.url}
         ref={ref}

@@ -50,7 +50,7 @@ const App = () => {
           setToggleActiveTab={setToggleActiveTab}
         />
         <Search setSearch={setSearch} />
-        <div className="max-h-[72vh] overflow-y-scroll no-scrollbar">
+        <div className="xl:max-h-[72vh] overflow-y-scroll no-scrollbar">
           <List
             toggleActiveTab={toggleActiveTab}
             songs={songs}

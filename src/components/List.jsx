@@ -27,7 +27,7 @@ export const List = ({ toggleActiveTab, songs, search }) => {
     <div>
       {toggleActiveTab == 0 &&
         filteredSongs.map((song, index) => (
-          <div className="max-h-[280px]" key={index}>
+          <div className="xl:max-h-[280px]" key={index}>
             <Song
               key={song.id}
               index={index}
@@ -41,7 +41,7 @@ export const List = ({ toggleActiveTab, songs, search }) => {
         ))}
       {toggleActiveTab == 1 &&
         topTracks.map((song, index) => (
-          <div className="max-h-[280px]" key={index}>
+          <div className="xl:max-h-[280px]" key={index}>
             <Song
               key={song.id}
               index={index}

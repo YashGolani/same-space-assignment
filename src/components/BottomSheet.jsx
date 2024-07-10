@@ -35,7 +35,7 @@ export const BottomSheet = ({
           </DrawerClose>
         </DrawerHeader>
 
-        <div className="px-4">
+        <div className="px-4 overflow-y-scroll">
           <Search setSearch={setSearch} />
           <div className="mt-8">
             <List
